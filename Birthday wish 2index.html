@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Navya 🎉</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ffe6e6, #ffe0f0);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .section {
+      display: none;
+      margin-bottom: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: #ff6699;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #ff3366;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎵 Background Music -->
+  <audio autoplay loop>
+    <source src="bg-music.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <!-- 1. Welcome -->
+    <div class="section" id="welcome" style="display:block;">
+      <h1>Hey Navya 👋</h1>
+      <p>Tap to unlock your birthday surprise 🎁</p>
+      <button onclick="showMessage()">Tap Me 😏</button>
+    </div>
+
+    <!-- 2. Message -->
+    <div class="section" id="message">
+      <p>I didn’t steal your phone...<br>Just hacked your heart 💘</p>
+      <p>OH WAIT — HAPPY BIRTHDAY NAVYA! 🎂</p>
+      <p>You're now 1 year hotter 🔥</p>
+    </div>
+
+    <!-- 3. Quiz -->
+    <div class="section" id="quiz">
+      <p>What’s your best quality?</p>
+      <button onclick="showAnswer()">A. That cute smile 😁</button><br />
+      <button onclick="showAnswer()">B. Angry but adorable 😤</button><br />
+      <button onclick="showAnswer()">C. Sweet talks 🥰</button><br />
+      <button onclick="showAnswer()">D. All of the above. Obviously. 💅</button>
+      <p id="answer" class="hidden">Correct Answer: D! Like there was any doubt 😌</p>
+    </div>
+
+    <!-- 4. Birthday Message -->
+    <div class="section" id="birthday-msg">
+      <p>Navya, you’re like the extra cheese on fries —</p>
+      <p>Completely unnecessary, but absolutely irresistible 🍟💖</p>
+      <p>Keep shining, keep laughing, and never stop being your crazy, awesome self.</p>
+      <p>Happy Birthday once again!</p>
+      <p>– From Lakshin 😊</p>
+    </div>
+
+    <!-- 5. Reaction -->
+    <div class="section" id="reaction">
+      <button onclick="sayWow()">Say WOW!</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function showMessage() {
+      document.getElementById("welcome").style.display = "none";
+      document.getElementById("message").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("message").style.display = "none";
+        document.getElementById("quiz").style.display = "block";
+      }, 3000);
+    }
+
+    function showAnswer() {
+      document.getElementById("answer").classList.remove("hidden");
+      setTimeout(() => {
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("birthday-msg").style.display = "block";
+      }, 2000);
+    }
+
+    function sayWow() {
+      alert("WOOOOWWW! 🎉");
+      document.getElementById("birthday-msg").style.display = "none";
+      document.getElementById("reaction").style.display = "block";
+    }
+  </script>
+</body>
+</html>
